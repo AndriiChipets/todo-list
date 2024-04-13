@@ -3,8 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>tasks</title>
+    <link href="style/main.css" rel="stylesheet">
+    <script src="script/jquery.js"></script>
+    <script src="script/my.js"></script>
 </head>
 <body>
-
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task, number : ${tasks}">
+        <td th:text="${task.id}"></td>
+        <td th:text="${task.description}" th:id="'descroption_' + ${task.id}"></td>
+        <td th:text="${task.status}" th:id="'status' + ${task.id}"></td>
+        <td>
+            <button th:id="'edit_' + ${task.id}" th:onclick="'edit_task(' + ${task.id} + ')'">Edit</button>
+        </td>
+        <td>
+            <button th:id="'delete_' + ${task.getId()}" th:onclick="'delete_task(' + ${task.getId()} + ')'">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2>
+    <td>
+        <button th:each="pageNumber : ${page_numbers}" class="button_page">
+            <a th:href="@{/(page=${pageNumber}, limit=10)}" th:text="${pageNumber}"
+               th:classappend="${pageNumber == current_page?'active_page':''}"></a>
+        </button>
+    </td>
+</h2>
 </body>
 </html>
