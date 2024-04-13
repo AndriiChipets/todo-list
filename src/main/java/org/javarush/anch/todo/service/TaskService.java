@@ -1,16 +1,20 @@
 package org.javarush.anch.todo.service;
 
+import org.javarush.anch.todo.domain.Status;
 import org.javarush.anch.todo.domain.Task;
 
 import java.util.List;
 
 public interface TaskService {
-    void addTask(Task task);
 
-    Task getTaskById(int id);
+    int getAllCount();
 
-    List<Task> getAllTasks();
+    List<Task> getAll(int offset, int limit);
 
-    void deleteTaskById(int id);
+    Task edit(int id, String description, Status status);
+
+    Task create(String description, Status status);
+
+    void delete(int id);
 
 }

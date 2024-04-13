@@ -12,9 +12,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        TaskService taskService = applicationContext.getBean(TaskServiceImpl.class);
-        List<Task> tasks = taskService.getAllTasks();
-        tasks.forEach(System.out::println);
+//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+//        TaskService taskService = applicationContext.getBean(TaskServiceImpl.class);
+//        List<Task> tasks = taskService.getAll();
+//        tasks.forEach(System.out::println);
     }
 }
