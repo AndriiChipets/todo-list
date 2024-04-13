@@ -2,7 +2,7 @@ package org.javarush.anch.todo.service;
 
 import lombok.RequiredArgsConstructor;
 import org.javarush.anch.todo.domain.Task;
-import org.javarush.anch.todo.dao.TaskRepository;
+import org.javarush.anch.todo.dao.TaskDAO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
 
-    private final TaskRepository taskRepository;
+    private final TaskDAO taskRepository;
 
     @Override
     public void addTask(Task task) {
