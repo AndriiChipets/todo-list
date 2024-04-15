@@ -37,25 +37,26 @@ public class TaskController {
         return "tasks";
     }
 
-    //    @PostMapping("/{id}")
-//    public String edit(Model model,
-//                       @PathVariable Integer id,
-//                       @RequestBody TaskInfo info) {
-//        if (isNull(id) || id <= 0) {
-//            throw new RuntimeException("Invalid id");
-//        }
-//        return tasks(model, 1, 10);
-//    }
-//
-//    @PostMapping("/")
-//    public String add(Model model,
-//                      @RequestBody TaskInfo info) {
-//
-//        taskService.create(info.getDescription(), info.getStatus());
-//        return tasks(model, 1, 10);
-//    }
-//
-    @DeleteMapping ("/{id}")
+    @PostMapping("/{id}")
+    public String edit(Model model,
+                       @PathVariable("id") Integer id,
+                       @RequestBody TaskInfo info) {
+        if (isNull(id) || id <= 0) {
+            throw new RuntimeException("Invalid id");
+        }
+        taskService.create(info.getDescription(), info.getStatus());
+        return tasks(model, 1, 10);
+    }
+
+    @PostMapping("/")
+    public String add(Model model,
+                      @RequestBody TaskInfo info) {
+
+        taskService.create(info.getDescription(), info.getStatus());
+        return tasks(model, 1, 10);
+    }
+
+    @DeleteMapping("/{id}")
     public String delete(Model model,
                          @PathVariable("id") Integer id) {
         if (isNull(id) || id <= 0) {

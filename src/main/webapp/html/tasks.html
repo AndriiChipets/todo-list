@@ -22,10 +22,32 @@
         <td th:text="${task.description}" th:id="'descroption_' + ${task.id}"></td>
         <td th:text="${task.status}" th:id="'status' + ${task.id}"></td>
         <td>
-            <button th:id="'edit_' + ${task.id}" th:onclick="'edit_task(' + ${task.id} + ')'">Edit</button>
+            <button th:id="'edit_' + ${task.getId()}" th:onclick="'edit_task(' + ${task.getId()} + ')'">Edit</button>
         </td>
         <td>
-            <button th:id="'delete_' + ${task.getId()}" th:onclick="'delete_task(' + ${task.getId()} + ')'">Delete</button>
+            <button th:id="'delete_' + ${task.getId()}" th:onclick="'delete_task(' + ${task.getId()} + ')'">Delete
+            </button>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" class="text_bold">Add new task:</td>
+    </tr>
+    <tr>
+        <td>-</td>
+        <td>
+            <input id='description_new' type='text' value=''>
+        </td>
+        <td>
+            <label for='status_new'></label>
+            <select id='status_new'>
+                <option value='IN_PROGRESS'>IN PROGRESS</option>
+                <option value='DONE'>DONE</option>
+                <option value='PAUSED'>PAUSED</option>
+            </select>
+        </td>
+        <td>
+            <button id='save_new' onclick='add_task()'>Save</button>
         </td>
     </tr>
     </tbody>
