@@ -29,6 +29,12 @@ public class AppConfig {
         return sessionFactory;
     }
 
+    /*
+    - property for local db
+    dataSource.setJdbcUrl("jdbc:p6spy:mysql://localhost:3306/todo");
+    - property for docker db
+    dataSource.setJdbcUrl("jdbc:p6spy:mysql://db:3306/todo");
+     */
     @Bean
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();

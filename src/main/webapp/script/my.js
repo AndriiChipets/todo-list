@@ -10,6 +10,7 @@ function delete_task(task_id) {
 }
 
 function edit_task(task_id) {
+    console.log("test");
     let identifier_delete = "#delete_" + task_id;
     $(identifier_delete).remove();
 

@@ -18,9 +18,9 @@
     </thead>
     <tbody>
     <tr th:each="task, number : ${tasks}">
-        <td th:text="${task.id}"></td>
-        <td th:text="${task.description}" th:id="'descroption_' + ${task.id}"></td>
-        <td th:text="${task.status}" th:id="'status' + ${task.id}"></td>
+        <td th:text="${task.getId()}"></td>
+        <td th:text="${task.description}" th:id="'descroption_' + ${task.getId()}"></td>
+        <td th:text="${task.status}" th:id="'status' + ${task.getId()}"></td>
         <td>
             <button th:id="'edit_' + ${task.getId()}" th:onclick="'edit_task(' + ${task.getId()} + ')'">Edit</button>
         </td>

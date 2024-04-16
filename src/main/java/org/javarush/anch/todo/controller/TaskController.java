@@ -41,18 +41,22 @@ public class TaskController {
     public String edit(Model model,
                        @PathVariable("id") Integer id,
                        @RequestBody TaskInfo info) {
+        System.out.println(info);
+        System.out.println(id);
         if (isNull(id) || id <= 0) {
             throw new RuntimeException("Invalid id");
         }
-        taskService.create(info.getDescription(), info.getStatus());
+        Task task = taskService.edit(id, info.getDescription(), info.getStatus());
+        System.out.println(task);
         return tasks(model, 1, 10);
     }
 
     @PostMapping("/")
     public String add(Model model,
                       @RequestBody TaskInfo info) {
-
-        taskService.create(info.getDescription(), info.getStatus());
+        System.out.println(info);
+        Task task = taskService.create(info.getDescription(), info.getStatus());
+        System.out.println(task);
         return tasks(model, 1, 10);
     }
 
