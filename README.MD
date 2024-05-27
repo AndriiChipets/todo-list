@@ -3,7 +3,7 @@ This application looks like todo-list with ability to see, add, edit and delete 
 The main idea is to implement a simple Spring application without Spring Boot usage.
 
 # Technologies Used
-- Java 21
+- Java 18
 - Spring MVC
 - Hibernate
 - MySQL DB
