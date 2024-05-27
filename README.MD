@@ -1,6 +1,6 @@
 # Introduction
-This application looks like todo-list with ability to see, add, edit and delete task (CRUD operations).
-The main idea to implement simple Spring application without Spring Boot usage.
+This application looks like todo-list with ability to see, add, edit and delete tasks (CRUD operations).
+The main idea is to implement a simple Spring application without Spring Boot usage.
 
 # Technologies Used
 - Java 21
